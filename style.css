@@ -10,7 +10,7 @@ body {
 
 /* Navbar styles */
 nav {
-  background: #111; /* Dark gray matching footer */
+  background: #111;
   width: 100%;
   padding: 1rem 2rem;
   box-sizing: border-box;
@@ -31,9 +31,10 @@ nav {
   letter-spacing: 1px;
 }
 
-/* Hide checkbox by default */
+/* Hide checkbox safely */
 #menu-toggle {
-  display: none;
+  position: absolute;
+  left: -9999px;
 }
 
 /* Hamburger icon */
@@ -45,7 +46,7 @@ nav {
   user-select: none;
 }
 
-/* Menu container */
+/* Menu links */
 .menu {
   display: flex;
   gap: 2rem;
@@ -61,7 +62,7 @@ nav {
 }
 
 .menu a:hover {
-  color: #C8102E; /* Red on hover */
+  color: #C8102E;
 }
 
 /* Header / title block */
@@ -69,7 +70,7 @@ header {
   background-color: #111;
   color: white;
   text-align: center;
-  height: 400px; /* Fixed height for consistent layout */
+  height: 400px; /* Fixed height */
   background-image: url('images/cover.jpg');
   background-size: cover;
   background-position: center;
@@ -124,7 +125,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* About Us section with side image */
+/* About Us section */
 #about {
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +143,7 @@ h2 {
   flex: 2 1 400px;
 }
 
-/* Footer styling */
+/* Footer */
 footer {
   display: flex;
   justify-content: space-between;
@@ -163,7 +164,7 @@ footer a:hover {
   color: #C8102E;
 }
 
-/* Team section grid */
+/* Team grid */
 .team-grid {
   display: flex;
   gap: 2rem;
@@ -180,7 +181,7 @@ footer a:hover {
   border-radius: 10px;
 }
 
-/* Cars section specs */
+/* Cars specs grid */
 .car-specs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -217,11 +218,10 @@ footer a:hover {
     display: block;
   }
 
-  /* Show menu when checkbox checked */
- #menu-toggle:checked + .menu-icon + .menu {
-  max-height: 400px;
-  opacity: 1;
-  padding: 0.5rem 0;
-}
-
+  /* When checkbox is checked, show the dropdown */
+  #menu-toggle:checked + .menu-icon + .menu {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
 }
