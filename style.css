@@ -1,255 +1,226 @@
 /* General body styles */
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #C1C6C8; /* Light gray background */
-    color: #222;
-    font-size: 1.1rem; /* Larger body text */
-    line-height: 1.6;  /* Better readability */
+  font-family: 'Segoe UI', 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #C1C6C8; /* Light gray background */
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Navbar styles */
 nav {
-    background: #111; /* Dark gray matching footer */
-    width: 100%;
-    padding: 1rem 2rem;
-    box-sizing: border-box;
+  background: #111; /* Dark gray matching footer */
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: flex-end; /* Align navbar right */
-    align-items: center;
-    gap: 2rem;
-}
-
-nav a {
-    color: white; /* Default white links */
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-nav a:hover {
-    color: #C8102E; /* Red on hover */
-}
-
-/* Navbar base styles */
-nav {
-    background: #111;
-    width: 100%;
-    padding: 1rem 2rem;
-    box-sizing: border-box;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 .logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Hide default checkbox */
+/* Hide checkbox by default */
 #menu-toggle {
-    display: none;
+  display: none;
 }
 
 /* Hamburger icon */
 .menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
 }
 
-/* Menu links container */
+/* Menu container */
 .menu {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    transition: color 0.2s;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: color 0.2s;
 }
 
 .menu a:hover {
-    color: #C8102E;
+  color: #C8102E; /* Red on hover */
 }
-
-/* ---------- Responsive Breakpoints ---------- */
-@media (max-width: 768px) {
-    .menu {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 2rem;
-        background: #111;
-        border-radius: 8px;
-        padding: 0;
-        width: 200px;
-        overflow: hidden;
-        max-height: 0; /* Collapsed by default */
-        transition: max-height 0.4s ease-in-out; /* Smooth dropdown animation */
-    }
-
-    .menu a {
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #333;
-    }
-
-    .menu a:last-child {
-        border-bottom: none;
-    }
-
-    /* Show hamburger icon */
-    .menu-icon {
-        display: block;
-    }
-
-    /* When checkbox is checked, expand the dropdown */
-    #menu-toggle:checked + .menu-icon + .menu {
-        max-height: 400px; /* Enough space for all links */
-        padding: 0.5rem 0;
-    }
-}
-
 
 /* Header / title block */
 header {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    height: 600px; /* Fixed height for consistent layout */
-    background-image: url('images/cover.jpg');
-    background-size: cover; /* Crop the image to fill */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem; /* Minor side padding for text */
+  background-color: #111;
+  color: white;
+  text-align: center;
+  height: 400px; /* Fixed height for consistent layout */
+  background-image: url('images/cover.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1rem;
 }
 
 header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55); /* Dark overlay */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 header h1,
 header p {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    text-transform: uppercase;
-    font-style: italic;
-    font-family: 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
-    letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
+  letter-spacing: 1px;
 }
 
 header h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 header p {
-    font-size: clamp(1rem, 3vw, 1.8rem);
-    color: #C1C6C8;
-    margin-top: 0.5rem;
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  color: #C1C6C8;
+  margin-top: 0.5rem;
 }
 
 /* Section styling */
 section {
-    padding: 4rem 10%;
-    max-width: 1000px;
-    margin: auto;
+  padding: 4rem 10%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 h2 {
-    color: #C8102E; /* Red headings */
-    text-transform: uppercase;
-    border-bottom: 2px solid #C8102E;
-    display: inline-block;
-    margin-bottom: 1rem;
+  color: #C8102E;
+  text-transform: uppercase;
+  border-bottom: 2px solid #C8102E;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 /* About Us section with side image */
 #about {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
 }
 
 #about img {
-    flex: 1 1 300px;
-    max-width: 400px;
-    border-radius: 10px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  border-radius: 10px;
 }
 
 #about div {
-    flex: 2 1 400px;
+  flex: 2 1 400px;
 }
 
 /* Footer styling */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111; /* Dark gray */
-    color: white;
-    padding: 1.5rem 2rem;
-    font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 1.5rem 2rem;
+  font-size: 0.85rem;
 }
 
 footer a {
-    color: white; /* Instagram default white */
-    text-decoration: none;
-    transition: color 0.2s;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 footer a:hover {
-    color: #C8102E; /* Red on hover */
+  color: #C8102E;
 }
 
 /* Team section grid */
 .team-grid {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .team-grid div {
-    flex: 1 1 200px;
-    text-align: center;
+  flex: 1 1 200px;
+  text-align: center;
 }
 
 .team-grid img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* Cars section specs */
 .car-specs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    background: #111;
+    border-radius: 8px;
+    width: 200px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .menu a {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* Show menu when checkbox checked */
+  #menu-toggle:checked + .menu-icon + .menu {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
 }
