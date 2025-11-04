@@ -36,23 +36,122 @@ nav a:hover {
     color: #C8102E; /* Red on hover */
 }
 
+/* Navbar base styles */
+nav {
+    background: #111;
+    width: 100%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hide default checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Menu links container */
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #C8102E;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background: #111;
+        border-radius: 8px;
+        padding: 0;
+        width: 200px;
+        overflow: hidden;
+        max-height: 0; /* Collapsed by default */
+        transition: max-height 0.4s ease-in-out; /* Smooth dropdown animation */
+    }
+
+    .menu a {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #333;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+
+    /* Show hamburger icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* When checkbox is checked, expand the dropdown */
+    #menu-toggle:checked + .menu-icon + .menu {
+        max-height: 400px; /* Enough space for all links */
+        padding: 0.5rem 0;
+    }
+}
+
+
 /* Header / title block */
 header {
     background-color: #111;
     color: white;
     text-align: center;
-    padding: 10rem 1rem 8rem 1rem;
-    background-image: url('images/cover.jpg'); /* Header image path */
-    background-size: cover;
-    background-position: center;
+    height: 600px; /* Fixed height for consistent layout */
+    background-image: url('images/cover.jpg');
+    background-size: cover; /* Crop the image to fill */
+    background-position: center; /* Keep it centered */
+    background-repeat: no-repeat;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem; /* Minor side padding for text */
 }
 
 header::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.55); /* Dark overlay */
 }
 
 header h1,
@@ -72,7 +171,7 @@ header h1 {
 
 header p {
     font-size: clamp(1rem, 3vw, 1.8rem);
-    color: #C1C6C8; /* Gray subtitle */
+    color: #C1C6C8;
     margin-top: 0.5rem;
 }
 
