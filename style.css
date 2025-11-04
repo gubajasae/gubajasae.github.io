@@ -1,59 +1,72 @@
-/* ---------- General body styles ---------- */
+/* -------- General -------- */
 body {
   font-family: 'Segoe UI', 'Roboto', 'Open Sans', Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #C1C6C8; /* Light gray background */
+  background-color: #C1C6C8;
   color: #222;
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
-/* ---------- Navbar styles ---------- */
-nav {
+/* -------- Navbar -------- */
+.navbar {
   background: #111;
+  color: white;
   width: 100%;
   padding: 1rem 2rem;
   box-sizing: border-box;
 }
 
-.nav-container {
+.nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .logo {
-  color: white;
   font-weight: bold;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Hide checkbox off-screen */
-.menu-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+/* Hide checkbox */
+.nav-toggle {
+  display: none;
 }
 
 /* Hamburger icon */
-.menu-icon {
+.hamburger {
   display: none;
-  font-size: 2rem;
-  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
   cursor: pointer;
-  user-select: none;
 }
 
-/* Menu layout */
-.menu {
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-.menu a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -62,11 +75,64 @@ nav {
   transition: color 0.2s;
 }
 
-.menu a:hover {
+.nav-links a:hover {
   color: #C8102E;
 }
 
-/* ---------- Header section ---------- */
+/* -------- Responsive Navbar -------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-radius: 8px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #333;
+  }
+
+  /* Show menu when checked */
+  .nav-toggle:checked ~ .nav-links {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
+
+  /* Animate hamburger into X */
+  .nav-toggle:checked + .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+
+  .nav-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
+
+/* -------- Header -------- */
 header {
   background-color: #111;
   color: white;
@@ -111,7 +177,7 @@ header p {
   margin-top: 0.5rem;
 }
 
-/* ---------- Section styling ---------- */
+/* -------- About section -------- */
 section {
   padding: 4rem 10%;
   max-width: 1000px;
@@ -126,7 +192,6 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* About section */
 #about {
   display: flex;
   flex-wrap: wrap;
@@ -144,7 +209,7 @@ h2 {
   flex: 2 1 400px;
 }
 
-/* ---------- Footer ---------- */
+/* -------- Footer -------- */
 footer {
   display: flex;
   justify-content: space-between;
@@ -163,41 +228,4 @@ footer a {
 
 footer a:hover {
   color: #C8102E;
-}
-
-/* ---------- Responsive Breakpoints ---------- */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 2rem;
-    background: #111;
-    border-radius: 8px;
-    width: 200px;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-  }
-
-  .menu a {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #333;
-  }
-
-  .menu a:last-child {
-    border-bottom: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  /* When checkbox checked, show menu */
-  .menu-toggle:checked ~ .menu {
-    max-height: 400px;
-    opacity: 1;
-    padding: 0.5rem 0;
-  }
 }

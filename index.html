@@ -8,23 +8,26 @@
 </head>
 <body>
 
-  <nav>
-    <div class="nav-container">
+  <nav class="navbar">
+    <div class="nav-inner">
       <div class="logo">Gonzaga SAE</div>
 
-      <!-- The hidden checkbox -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <!-- The label (hamburger icon) -->
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <!-- Toggle checkbox and label -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-      <!-- The menu must come *immediately* after the label -->
-      <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="pages/cars.html">Our Cars</a>
-        <a href="pages/team.html">Our Team</a>
-        <a href="pages/donors.html">Donors</a>
-        <a href="pages/contact.html">Contact Us</a>
-      </div>
+      <!-- The menu links -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/cars.html">Our Cars</a></li>
+        <li><a href="pages/team.html">Our Team</a></li>
+        <li><a href="pages/donors.html">Donors</a></li>
+        <li><a href="pages/contact.html">Contact Us</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -35,7 +38,7 @@
 
   <main>
     <section id="about">
-      <img src="images/about.jpg" alt="About Us">
+      <img src="images/about.jpg" alt="About Us" />
       <div>
         <h2>About Us</h2>
         <p>We are a team of engineering students from Gonzaga University competing in the Baja SAE competition.
