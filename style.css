@@ -147,7 +147,6 @@ header {
   color: white;
   text-align: center;
   height: 600px;
-  background-image: url('images/cover.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -157,6 +156,34 @@ header {
   justify-content: center;
   padding: 0 1rem;
 }
+
+/* Page-specific header images */
+body.home header {
+  background-image: url('images/home-cover.jpg'); /* index page cover */
+}
+
+body.team header {
+  background-image: url('images/team-cover.jpg'); /* team page cover */
+}
+
+body.cars header {
+  background-image: url('images/cars-cover.jpg');
+}
+
+body.contact header {
+  background-image: url('images/contact-cover.jpg');
+}
+
+body.donors header {
+  background-image: url('images/donors-cover.jpg');
+}
+
+/* Example for other pages:
+body.donors header {
+  background-image: url('../images/donors-cover.jpg');
+}
+*/
+
 
 header::before {
   content: '';
