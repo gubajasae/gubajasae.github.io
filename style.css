@@ -1,126 +1,136 @@
-/* Navigation bar */
+/* General body styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f8f8f8;
+    color: #222;
+}
+
+/* Navbar styles */
 nav {
-  background: #111;
-  width: 100%;
-  padding: 1rem 2rem;
-  box-sizing: border-box;
+    background: #111; /* Dark gray matching footer */
+    width: 100%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  transition: color 0.2s;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
+nav a.active,
 nav a:hover {
-  color: #ffb800;
+    color: #C8102E; /* Red secondary color */
 }
 
-/* Header styling */
+/* Header / title block */
 header {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 10rem 1rem 8rem 1rem; /* taller area */
-  background-image: url('car-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 10rem 1rem 8rem 1rem;
+    background-image: url('cover.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
 }
 
 header h1,
 header p {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  text-transform: uppercase;
-  font-style: italic;
-  font-family: 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
-  letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
+    letter-spacing: 1px;
 }
 
-/* Responsive main title */
 header h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-/* Responsive subtitle */
 header p {
-  font-size: clamp(1rem, 3vw, 1.8rem);
-  color: #C1C6C8;
-  margin-top: 0.5rem;
+    font-size: clamp(1rem, 3vw, 1.8rem);
+    color: #C1C6C8; /* Gray subtitle */
+    margin-top: 0.5rem;
 }
 
-/* Section formatting */
+/* Section styling */
 section {
-  padding: 4rem 10%;
-  max-width: 1000px;
-  margin: auto;
+    padding: 4rem 10%;
+    max-width: 1000px;
+    margin: auto;
 }
+
 h2 {
-  color: #ffb800;
-  text-transform: uppercase;
-  border-bottom: 2px solid #ffb800;
-  display: inline-block;
-  margin-bottom: 1rem;
+    color: #C8102E;
+    text-transform: uppercase;
+    border-bottom: 2px solid #C8102E;
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
-/* Cars grid and specs */
-.car-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.spec {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  flex: 1 1 250px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* Team grid */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  text-align: center;
-}
-.team-grid img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-/* Footer */
+/* Footer styling */
 footer {
-  text-align: center;
-  background: #111;
-  color: white;
-  padding: 1.5rem;
-  font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111; /* Dark gray */
+    color: white;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
 }
+
 footer a {
-  color: #ffb800;
-  text-decoration: none;
+    color: #C8102E;
+    text-decoration: none;
 }
+
 footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+}
+
+/* Team section grid */
+.team-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.team-grid div {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.team-grid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Cars section specs */
+.car-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
 }
