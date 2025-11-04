@@ -16,7 +16,7 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Align right */
     align-items: center;
     gap: 2rem;
 }
@@ -41,7 +41,7 @@ header {
     color: white;
     text-align: center;
     padding: 10rem 1rem 8rem 1rem;
-    background-image: url('cover.jpg');
+    background-image: url('cover.jpg'); /* Ensure your cover.jpg is in the same folder */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -83,7 +83,7 @@ section {
 }
 
 h2 {
-    color: #C8102E;
+    color: #C8102E; /* Red headings */
     text-transform: uppercase;
     border-bottom: 2px solid #C8102E;
     display: inline-block;
@@ -102,7 +102,7 @@ footer {
 }
 
 footer a {
-    color: #C8102E;
+    color: #C8102E; /* Red link */
     text-decoration: none;
 }
 
@@ -112,25 +112,3 @@ footer a:hover {
 
 /* Team section grid */
 .team-grid {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.team-grid div {
-    flex: 1 1 200px;
-    text-align: center;
-}
-
-.team-grid img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* Cars section specs */
-.car-specs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
