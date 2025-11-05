@@ -221,7 +221,7 @@ section h2 {
 /* About section specifics */
 #about img {
   flex: 1 1 300px;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 10px;
 }
 
