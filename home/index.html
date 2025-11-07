@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gonzaga SAE Baja</title>
-<link rel="icon" href="../images/favicon.png" type="image/png">
-<link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gonzaga SAE Baja</title>
+  <link rel="icon" href="../images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body class="home">
 
-  <!-- Navbar -->
+  <!-- ================= NAVBAR ================= -->
   <nav class="navbar">
     <div class="nav-inner">
       <div class="logo">
-        <img src="../images/logo.png" alt="Gonzaga SAE Logo">
+        <img src="../images/logo.png" alt="Gonzaga SAE Logo" />
       </div>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <!-- checkbox toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden" />
+
+      <!-- hamburger icon -->
       <label for="nav-toggle" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </label>
 
+      <!-- menu links -->
       <ul class="nav-links">
-        <li><a href="../home/" class="active">Home</a></li>
-        <li><a href="../cars/">Our Cars</a></li>
-        <li><a href="../team/">Our Team</a></li>
-        <li><a href="../donors/">Donors</a></li>
-        <li><a href="../contact/">Contact Us</a></li>
+        <li><a href="../home/" class="active" onclick="document.getElementById('nav-toggle').checked=false;">Home</a></li>
+        <li><a href="../cars/" onclick="document.getElementById('nav-toggle').checked=false;">Our Cars</a></li>
+        <li><a href="../team/" onclick="document.getElementById('nav-toggle').checked=false;">Our Team</a></li>
+        <li><a href="../donors/" onclick="document.getElementById('nav-toggle').checked=false;">Donors</a></li>
+        <li><a href="../contact/" onclick="document.getElementById('nav-toggle').checked=false;">Contact Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Header -->
+  <!-- ================= HEADER ================= -->
   <header>
     <h1>Gonzaga Society of Automotive Engineers</h1>
     <p>Baja Race Team</p>
   </header>
 
-  <!-- About Section -->
+  <!-- ================= ABOUT SECTION ================= -->
   <section class="full-width-section">
     <div class="content" id="about">
       <img src="../images/about.jpg" alt="About Us" />
@@ -53,11 +58,13 @@
     </div>
   </section>
 
-<footer>
-<a href="https://www.instagram.com/gubajasae/" target="_blank">Instagram</a>
-<a href="mailto:omunger@zagmail.gonzaga.edu" target="_blank">Contact Us</a>
-<a href="../donors/" target="_blank">Donate</a>
-<p>© 2025 Gonzaga SAE Baja</p>
-</footer>
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <a href="https://www.instagram.com/gubajasae/" target="_blank">Instagram</a>
+    <a href="mailto:omunger@zagmail.gonzaga.edu" target="_blank">Contact Us</a>
+    <a href="../donors/" target="_blank">Donate</a>
+    <p>© 2025 Gonzaga SAE Baja</p>
+  </footer>
 
 </body>
+</html>

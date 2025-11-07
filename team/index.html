@@ -10,26 +10,30 @@
 
 <body class="team">
 
-  <!-- Navbar -->
+ <!-- ================= NAVBAR ================= -->
   <nav class="navbar">
     <div class="nav-inner">
       <div class="logo">
-        <img src="../images/logo.png" alt="Gonzaga SAE Logo">
+        <img src="../images/logo.png" alt="Gonzaga SAE Logo" />
       </div>
 
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <!-- checkbox toggle -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden" />
+
+      <!-- hamburger icon -->
       <label for="nav-toggle" class="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </label>
 
+      <!-- menu links -->
       <ul class="nav-links">
-        <li><a href="../home/">Home</a></li>
-        <li><a href="../cars/">Our Cars</a></li>
-        <li><a href="../team/" class="active">Our Team</a></li>
-        <li><a href="../donors/">Donors</a></li>
-        <li><a href="../contact/">Contact Us</a></li>
+        <li><a href="../home/" onclick="document.getElementById('nav-toggle').checked=false;">Home</a></li>
+        <li><a href="../cars/" onclick="document.getElementById('nav-toggle').checked=false;">Our Cars</a></li>
+        <li><a href="../team/" class="active" onclick="document.getElementById('nav-toggle').checked=false;">Our Team</a></li>
+        <li><a href="../donors/" onclick="document.getElementById('nav-toggle').checked=false;">Donors</a></li>
+        <li><a href="../contact/" onclick="document.getElementById('nav-toggle').checked=false;">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -194,11 +198,8 @@
     <section class="team-section">
       <p>Special thanks also to:</p>
       <p>SEAS Dean Jennifer Shepherd</p>
-      <p>SEAS Dean Jennifer Shepherd</p>
-      <p>SEAS Dean Jennifer Shepherd</p>
-      <p>SEAS Dean Jennifer Shepherd</p>
-      <p>SEAS Dean Jennifer Shepherd</p>
-      <p>SEAS Dean Jennifer Shepherd</p>
+      <p>Daniel Clark</p>
+      <p>Richard Keroack</p>
     </section>
 
   </main>
