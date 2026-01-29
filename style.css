@@ -203,11 +203,103 @@ body.team .member img { width:100%; aspect-ratio:1/1; object-fit:cover; border-r
 body.team .member h3 { color:#111; margin-bottom:.3rem; font-size:1.1rem; }
 body.team .member .role { color:var(--accent); font-weight:bold; }
 
-/* donors */
-body.donors header { background: url('donors/cover.jpg') center/cover no-repeat; }
-body.donors main { background: #fff; padding: 4rem 2rem; text-align: center; }
-body.donors #donors h2 { color:var(--accent); border-bottom:2px solid var(--accent); display:inline-block; padding-bottom:.5rem; }
-body.donors #donors p { max-width:700px; margin:2rem auto; font-size:1.1rem; }
+/* ================= DONORS ================= */
+
+/* Page header */
+body.donors header {
+  background: url('donors/cover.jpg') center/cover no-repeat;
+  text-align: center;
+}
+
+/* Main content */
+body.donors main {
+  background: #fff; 
+  padding: 3rem 2rem; /* slightly less top/bottom padding */
+  text-align: center;
+}
+
+/* Donors section title */
+body.donors #donors h2 {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* tightened */
+}
+
+/* Donor section paragraph text */
+body.donors #donors p {
+  max-width: 700px;
+  margin: 1rem auto 2rem auto; /* tighter spacing */
+  font-size: 1.05rem;
+  line-height: 1.4; /* tighter line spacing */
+  color: #222;
+}
+
+/* Sponsor logo grid — centered, tighter gap */
+body.donors #donors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.8rem; /* reduced from 3rem */
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;    /* less bottom margin */
+  max-width: 1100px;
+  padding: 0 1.5rem;
+}
+
+/* Ensure text spans full width in the grid */
+body.donors #donors > h2,
+body.donors #donors > h3,
+body.donors #donors > p {
+  grid-column: 1 / -1;
+}
+
+/* Sponsor logos — free-floating, bigger */
+body.donors #donors img {
+  width: 100%;
+  max-width: 280px;
+  height: 150px;
+  object-fit: contain;
+
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: filter 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Hover effect: grayscale → color + lift */
+body.donors #donors img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-3px) scale(1.05); /* smaller lift feels less “floating” */
+  box-shadow: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  body.donors #donors {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  body.donors #donors img {
+    max-width: 220px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.donors #donors img {
+    max-width: 180px;
+    height: 100px;
+  }
+}
 
 /* contact */
 body.contact header { background: url('contact/cover.jpg') center/cover no-repeat; }
