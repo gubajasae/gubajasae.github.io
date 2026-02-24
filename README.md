@@ -1,2 +1,2 @@
-# owenmunger.github.io
+# gubajasae.github.io
 GU Baja SAE Website
